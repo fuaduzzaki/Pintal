@@ -62,6 +62,7 @@ declare module '@auth/core/jwt' {
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  secret: process.env.AUTH_SECRET || 'pintal-demo-secret-change-in-production',
   providers: [
     Credentials({
       name: 'credentials',
